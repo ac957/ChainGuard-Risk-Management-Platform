@@ -1,11 +1,11 @@
-ChainGuard – Risk Management System
+# ChainGuard – Risk Management System
 
 A web-based risk management system designed to help organisations identify, assess, monitor and mitigate business risks, with a particular focus on supply chain and logistics environments.
 ChainGuard provides a centralised risk register, risk assessment tools, organisational management, notifications, mitigation tracking, analytics and AI-powered educational and mitigation guidance using Google's Gemini API.
 
-Features
+## Features
 
-🔐 Authentication & Security
+### 🔐 Authentication & Security
 - User registration and login
 - Secure password handling using BCrypt
 - Role-based access for:
@@ -15,7 +15,7 @@ Features
 - Profile setup and management
 - CSRF protection
 
-⚠️ Risk Management
+### ⚠️ Risk Management
 - Create and submit organisational risks
 - Categorise risks by type
 - Record likelihood and impact scores
@@ -26,26 +26,26 @@ Features
 - AI powered mitigation assignemt guidance 
 - Monitor risk status through to resolution
 
-📊 Analytics Dashboard
+### 📊 Analytics Dashboard
 - Risk analytics and statistics
 - Visual representation of organisational risks
 - AI Powered Risk visualizations analysis
 - Dashboard views tailored to the organisation
 
-👥 Organisation Management
+### 👥 Organisation Management
 - Create and manage organisations
 - Manage organisation members
 - Support different organisational roles
 - Manager approval of membership requests
 - Organisation-specific risk management
 
-🔔 Notifications
+### 🔔 Notifications
 - In-system notifications
 - Notifications for important risk-management events
 - Email notifications using Gmail SMTP
 - Notification support for risk submissions and mitigation assignments
 
-🤖 AI-Powered Risk Education
+### 🤖 AI-Powered Risk Education
 
 ChainGuard integrates Google's Gemini API to provide educational guidance when users submit risks.
 
@@ -61,46 +61,46 @@ Provide suggestions for improving future risk submissions
 
 The AI service also includes fallback responses so that the application can continue providing useful information if the Gemini API is temporarily unavailable or rate-limited.
 
-📄 Risk Reports
+### 📄 Risk Reports
 - Generate risk reports
 - Export risk information as PDF
 - Provide structured information about organisational risks
 
-Technologies Used 
-Java 17 -	Application development
-Spring Boot -	Backend framework
-Spring MVC - Web application architecture
-Spring Security -	Authentication and authorisation
-Spring Data JPA	- Database access
-Hibernate	- ORM
-MySQL -	Relational database
-JSP	Server-side - web interface
-HTML/CSS - Front-end presentation
-Google Gemini API -	AI-powered features
-JavaMail / Gmail SMTP	Email notifications
-iText -	PDF report generation
-Gradle - Build and dependency management
-JUnit 5 -	Unit testing
-Mockito	- Mock-based testing
+## Technologies Used 
+- Java 17 -	Application development
+- Spring Boot -	Backend framework
+- Spring MVC - Web application architecture
+- Spring Security -	Authentication and authorisation
+- Spring Data JPA	- Database access
+- Hibernate	- ORM
+- MySQL -	Relational database
+- JSP	Server-side - web interface
+- HTML/CSS - Front-end presentation
+- Google Gemini API -	AI-powered features
+- JavaMail / Gmail SMTP	Email notifications
+- iText -	PDF report generation
+- Gradle - Build and dependency management
+- JUnit 5 -	Unit testing
+- Mockito	- Mock-based testing
 
-AI Integration
+## AI Integration
 
 ChainGuard uses Google's Gemini API through the Google GenAI Java SDK.
 
 The application sends structured prompts containing information about the submitted risk, including:
 
-Risk title
-Risk category
-Risk description
-Likelihood
-Impact
-Severity score
+- Risk title
+- Risk category
+- Risk description
+- Likelihood
+- Impact
+- Severity score
 
 Gemini is instructed to return structured JSON containing educational guidance and a risk-literacy score.
 
 The response is then converted into Java DTOs and displayed to the user through the application.
 
-AI Configuration
+## AI Configuration
 
 The Gemini API key must not be committed to GitHub.
 
@@ -121,7 +121,7 @@ export GEMINI_API_KEY="your-api-key"
 
 The AI functionality is designed to handle temporary API failures and rate limiting using fallback responses.
 
-Email Configuration
+## Email Configuration
 
 ChainGuard uses Gmail SMTP to send email notifications.
 
@@ -143,20 +143,20 @@ $env:MAIL_PASSWORD="your-app-password"
 
 A Gmail App Password should be used rather than your normal Gmail account password when required by the account configuration.
 
-Database Setup
+## Database Setup
 
 ChainGuard uses MySQL.
 
-1. Install MySQL
+### 1. Install MySQL
 
 Install MySQL Server and ensure that the MySQL service is running.
 
-2. Create the database
+### 2. Create the database
 
 Create a database named:
 
 CREATE DATABASE risk_management_system;
-3. Configure database credentials
+### 3. Configure database credentials
 
 The application expects the database configuration to be supplied through environment variables.
 
@@ -168,7 +168,7 @@ For example, on Windows PowerShell:
 
 $env:DB_USERNAME="root"
 $env:DB_PASSWORD="your-database-password"
-4. Database schema
+### 4. Database schema
 
 Hibernate is configured to update the database schema automatically when the application starts.
 
@@ -190,8 +190,9 @@ Cybersecurity
 Compliance
 Reputational
 Other
-Installation
-Prerequisites
+
+## Installation
+### Prerequisites
 
 Before running the application, install:
 
@@ -203,10 +204,11 @@ Optional:
 
 A Gemini API key for AI functionality
 An SMTP-enabled email account for email notifications
-Clone the Repository
+
+### Clone the Repository
 git clone https://github.com/YOUR-USERNAME/ChainGuard.git
 cd ChainGuard
-Configure Environment Variables
+### Configure Environment Variables
 
 Configure the database credentials:
 
@@ -224,7 +226,7 @@ MAIL_PASSWORD
 
 See the configuration section above for more information.
 
-Run the Application
+### Run the Application
 
 On Windows:
 
@@ -238,25 +240,26 @@ Alternatively, the project can be imported into IntelliJ IDEA or another Java ID
 
 Once the application has started, access it through the local server address shown in the Spring Boot console.
 
-Testing
+## Testing
 
 The project includes automated unit tests using JUnit 5 and Mockito.
 
 Tests cover areas of the application's business logic including:
 
-Authentication services
-Risk management
-Risk severity calculations
-Mitigation assignment
-Notification functionality
+- Authentication services
+- Risk management
+- Risk severity calculations
+- Mitigation assignment
+- Notification functionality
 
 Run the test suite using:
 
-Windows
+### Windows
 gradlew.bat test
 macOS/Linux
 ./gradlew test
-Security Considerations
+
+## Security Considerations
 
 Sensitive configuration must never be committed to the repository.
 
@@ -276,30 +279,28 @@ rather than:
 
 gemini.api.key=YOUR-REAL-API-KEY
 
-Key Learning Outcomes
+## Key Learning Outcomes
 
 This project demonstrates practical experience with:
 
-Object-oriented programming in Java
-Spring Boot application development
-MVC architecture
-REST/web application development
-Database design and persistence
-JPA and Hibernate
-Authentication and authorisation
-Secure password handling
-Role-based access control
-External API integration
-Prompt engineering and structured AI responses
-Email service integration
-PDF generation
-Automated unit testing
-Mocking with Mockito
-Exception handling and fallback behaviour
-Gradle dependency management
-Git-based version control
-Future Improvements
-
+- Object-oriented programming in Java
+- Spring Boot application development
+- MVC architecture
+- REST/web application development
+- Database design and persistence
+- JPA and Hibernate
+- Authentication and authorisation
+- Secure password handling
+- Role-based access control
+- External API integration
+- Prompt engineering and structured AI responses
+- Email service integration
+- PDF generation
+- Automated unit testing
+- Mocking with Mockito
+- Exception handling and fallback behaviour
+- Gradle dependency management
+- Git-based version control
 
 
 Project maintainer and creator : Anetta Chibangula
